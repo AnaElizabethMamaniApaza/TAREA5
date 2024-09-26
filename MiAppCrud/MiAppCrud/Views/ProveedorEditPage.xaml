@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MiAppCrud.Views.ProveedorEditPage">
+    <StackLayout Padding="10">
+        <Label Text="Nombre" />
+        <Entry x:Name="NombreEntry" Placeholder="Ingrese el nombre del proveedor" />
+
+        <Label Text="Teléfono" />
+        <Entry x:Name="TelefonoEntry" Placeholder="Ingrese el teléfono del proveedor" Keyboard="Telephone"/>
+
+        <Button Text="Guardar" Clicked="OnSaveClicked"/>
+        <Button Text="Eliminar" Clicked="OnDeleteClicked" IsVisible="{Binding Source={x:Reference NombreEntry}, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=False}"/>
+    </StackLayout>
+</ContentPage>
